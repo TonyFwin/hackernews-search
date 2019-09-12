@@ -18,6 +18,8 @@ import {
   } from './constants/index';
 
 const ButtonWithLoading = withLoading(Button); 
+const TableWithLoading = withLoading(Table);
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -141,13 +143,14 @@ class App extends Component {
           </Search>
         </div>
         { error 
-        ? <div className="interactions">
-          <p>Something went wrong</p>
-        </div>
-        :  <Table
-            list={list}
-            onDismiss={this.onDismiss}
-          />
+          ? <div className="interactions">
+              <p>Something went wrong</p>
+            </div>
+          : <TableWithLoading
+              isLoading={isLoading}
+              list={list}
+              onDismiss={this.onDismiss}
+            />
         }
       <div className="interactions">
         <ButtonWithLoading
