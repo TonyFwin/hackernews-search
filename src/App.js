@@ -5,7 +5,7 @@ import './App.css';
 import Table from './components/Table';
 import Button from './components/Button';
 import Search from './components/Search';
-import Loading from './components/Loading';
+import withLoading from './components/withLoading';
 
 import {
   DEFAULT_QUERY,
@@ -17,6 +17,7 @@ import {
   PARAM_HPP,
   } from './constants/index';
 
+const ButtonWithLoading = withLoading(Button); 
 class App extends Component {
   constructor(props) {
     super(props);
@@ -149,12 +150,12 @@ class App extends Component {
           />
         }
       <div className="interactions">
-        { isLoading
-            ? <Loading />
-            : <Button onClick={() => this.fetchSearchTopStories(searchKey, page + 1)}>
-                More
-              </Button>
-        }
+        <ButtonWithLoading
+          isLoading={isLoading}
+          onClick={() => this.fetchSearchTopStories(searchKey, page + 1)}
+        >
+          More
+        </ButtonWithLoading>
         </div>
       </div>
     );
