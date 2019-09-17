@@ -45,15 +45,6 @@ const Table = ({ list, sortKey, isSortReverse, onSort, onDismiss }) => {
             Title
           </Sort>
         </span>
-        <span style={{ width: '40%'}}>
-          <Sort
-            sortKey={'TITLE'}
-            onSort={onSort}
-            activeSortKey={sortKey}
-          >
-            Title
-          </Sort>
-        </span>
         <span style={{ width: '30%'}}>
           <Sort
             sortKey={'AUTHOR'}
@@ -82,9 +73,7 @@ const Table = ({ list, sortKey, isSortReverse, onSort, onDismiss }) => {
           </Sort>
         </span>
         <span style={{ width: '10%'}}>
-          <Sort>
             Archive
-          </Sort>
         </span>
       </div>
       {reverseSortedList.map(item =>

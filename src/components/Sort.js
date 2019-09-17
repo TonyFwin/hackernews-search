@@ -10,7 +10,7 @@ const Sort = ({
 }) => {
   const sortClass = classNames(
     'button-inline',
-    { 'button-active': sortKey === activeSortKey }
+    { 'button-active': sortKey === activeSortKey },
   );
 
   return (
